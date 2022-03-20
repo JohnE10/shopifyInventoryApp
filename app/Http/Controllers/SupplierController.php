@@ -24,8 +24,8 @@ class SupplierController extends Controller
         if ($supplier == 'CWR') {
             $localFile = 'cwrCSVFile.csv';
             $remoteFile = 'out/catalog.csv';
-            $username = '417330';
-            $password = 'tAxzKE_p';
+            $username = env('cwrUser');
+            $password = env('cwrPass');
 
             // make SFTP connection
             $sftp = new SFTP('edi.cwrdistribution.com');
@@ -41,8 +41,8 @@ class SupplierController extends Controller
         } elseif ($supplier == 'TWH') {
             $localFile = 'twHouseCSVFile.csv';
             $remoteFile = 'invenfeed_5264.csv';
-            $username = 'Tremidap';
-            $password = 'bASMIHTb4lZXEzO';
+            $username = env('twhUser');
+            $password = env('twhPass');
 
             // Make FTP connection
             $ftpServer = "ftp.twhouse.com";
